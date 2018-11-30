@@ -1,7 +1,8 @@
 <app-toolbar [sidenav]="mainSideBar"></app-toolbar>
 
+<!-- Main container -->
 <mat-drawer-container style="height: 100%">
-    <mat-drawer #mainSideBar mode="side" opened>
+    <mat-drawer #mainSideBar mode="side" [opened]="true">
       <app-sidebar></app-sidebar>
     </mat-drawer>
     <mat-drawer-content>

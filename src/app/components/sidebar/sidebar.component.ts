@@ -1,5 +1,5 @@
-import APP_CONFIG from 'src/app/config/global';
 import { Component, OnInit } from '@angular/core';
+import { APP_ROUTES } from '../../routing/app-routing.module';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  public APP: any = {};
+  public routes: any = {};
   constructor() { }
 
   ngOnInit() {
-    this.APP = APP_CONFIG;
+    this.routes = APP_ROUTES.filter(value => {
+      return value['menu'] === true;
+    });
   }
 
 }

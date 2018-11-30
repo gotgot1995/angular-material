@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import APP_CONFIG from 'src/app/config/global';
 import { MatSidenav } from '@angular/material/sidenav';
+import APP_CONFIG from 'src/app/config/global';
+import { APP_ROUTES } from '../../routing/app-routing.module';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,11 +10,15 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class ToolbarComponent implements OnInit {
   @Input() public sidenav: MatSidenav;
-  public APP: any = {};
+  public routes: any = {};
+  public config: any = {};
 
   constructor() { }
 
   ngOnInit() {
-    this.APP = APP_CONFIG;
+    this.config = APP_CONFIG;
+    this.routes = APP_ROUTES.filter(value => {
+        return value['menu'] === true;
+    });
   }
 }

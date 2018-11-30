@@ -1,11 +1,14 @@
-<mat-expansion-panel expanded="true">
+<mat-expansion-panel [expanded]="true">
   <mat-expansion-panel-header>
     <mat-panel-title>
       Main menu
     </mat-panel-title>
   </mat-expansion-panel-header>
   <mat-list>
-    <mat-list-item class="pointer-cursor" matRipple [routerLink]="item.route" *ngFor="let item of APP.routing.secondary">
+    <mat-list-item matRipple
+                   class="pointer-cursor"
+                   [routerLink]="item.path"
+                   *ngFor="let item of routes">
       {{ item.name }}
     </mat-list-item>
   </mat-list>

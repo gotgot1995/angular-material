@@ -3,14 +3,14 @@
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    {{ APP.name }}
+    {{ config.name }}
   </span>
 
   <span class="fill-remaining-space"></span>
 
-  <span *ngIf="APP.routing.main.length > 0" >
-    <button mat-icon-button [routerLink]="item.route"
-    name="item.name" *ngFor="let item of APP.routing.main" >
+  <span *ngIf="routes.length > 0" >
+    <button mat-icon-button [routerLink]="item.path"
+    name="item.name" *ngFor="let item of routes" >
       <mat-icon>{{ item.icon }}</mat-icon>
     </button>
   </span>
